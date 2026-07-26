@@ -1,0 +1,54 @@
+# HSCUT: Hyperspectral Contrastive Unpaired Translation
+# ======================================================
+# Paper: "HSCUT Network Based on Hyperspectral Features and Mask Constraints"
+#
+# Data and model paths configuration.
+# Copy this file to paths.yaml and modify paths to match your environment.
+#
+# Expected directory structure:
+#   <your_data_root>/
+#     HS-DATA/                  # Raw .spe/.hdr hyperspectral files (one subfolder per sample)
+#     GT-DATA/                  # Whole-slide OME-TIFF images for spatial registration
+#     processed_features/       # Output: TrueColor + FFT features
+#     FIN-DATA/                 # Final dataset for CUT training
+#       HS/
+#         trainA/ trainB/ testA/ testB/
+#         trainA_mask/          # Generated binary masks
+#     FIN-DATA-Q/               # Registered triplets (BF + HS matched pairs)
+#     Models_Separate_l2/       # Trained IPCA + KMeans models (one per tissue folder)
+
+# Raw Hyperspectral Data
+raw_data:
+  hs_root: "/path/to/VS-DATA/HS-DATA"
+  wsi_root: "/path/to/VS-DATA/GT-DATA"
+
+# Processed Intermediate Data
+processed:
+  features_root: "/path/to/VS-DATA/processed_features"
+  masks_root: "/path/to/VS-DATA/FIN-DATA/HS/trainA_mask"
+  registered_root: "/path/to/VS-DATA/FIN-DATA-Q"
+
+# Final Dataset (for CUT training)
+dataset:
+  root: "/path/to/VS-DATA/FIN-DATA"
+  trainA_mask: "/path/to/VS-DATA/FIN-DATA/HS/trainA_mask"
+
+# Trained IPCA + KMeans Models (per tissue folder)
+models:
+  ipca_kmeans_dir: "/path/to/VS-DATA/Models_Separate_l2"
+
+# CUT Model Outputs
+outputs:
+  checkpoints: "./checkpoints"
+  results: "./results"
+  figures: "./figures"
+
+# Physical Parameters (for decoupling)
+physics:
+  n_cell: 1.37
+  n_medium: 1.33
+  delta_n: 0.04
+  cauchy_a: 0.04
+  cauchy_b: 3000
+  crop_top: 41
+  selected_bands: [122, 62, 33]

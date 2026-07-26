@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large data outputs (generated, not source code)
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# Generated figure/output directories
+Figure_SX_*/
+Figure5_*/
+figure_*/
+figures/
+checkpoints/
+results/
+output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+paths.yaml
+
+# Jupyter
+.ipynb_checkpoints/
