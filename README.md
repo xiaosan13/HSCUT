@@ -51,6 +51,23 @@ Expected directory structure for `paths.yaml`:
     └── ...
 ```
 
+## Dataset
+
+A subset of the raw hyperspectral data (tissue sample CK) is available on Zenodo:
+
+| Platform | Link | Content |
+|----------|------|---------|
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21785435.svg)](https://doi.org/10.5281/zenodo.21785435) | [Zenodo](https://doi.org/10.5281/zenodo.21785435) | CK sample subset (68 `.hdr`/`.spe` files) |
+| Baidu Netdisk | *(link to be added)* | Full dataset (all 15 tissue folders, ~54 GB compressed) |
+
+Each `.tar.xz` archive preserves the original folder structure:
+```
+<folder>/
+├── 0.hdr / 0.spe          # Reference (white) measurement
+├── 1-1.hdr / 1-1.spe      # Measurement files
+└── ...
+```
+
 ## Project Structure
 
 ```
@@ -152,4 +169,10 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## Citation
 
-If you use this code, please cite our paper.
+If you use this code or dataset, please cite:
+
+**Code:**
+> [Paper citation to be added]
+
+**Dataset:**
+> HSCUT Hyperspectral Microscopy Dataset. Zenodo. https://doi.org/10.5281/zenodo.21785435
